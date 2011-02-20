@@ -147,7 +147,7 @@ a:hover {
 	margin: 10px;
 	padding: 50px;
 	list-style: none;
-	line-height: 6px;
+	line-height: 4px;
 }
 
 #menu li {
@@ -184,19 +184,23 @@ a:hover {
 /* Content */
 
 #content {
+	background: #F34600;
 	float: right;
 	width: 517px;
 	padding: 0px;
 	color: #FFF;
+	min-height: 400px;
 }
 
 /* Sidebar */
 
 #sidebar {
+	background: #D8DBCD;	
 	float: left;
 	width: 483px;
 	padding: 0px;
 	color: #787878;
+	min-height: 400px;
 }
 
 #sidebar ul {
