@@ -1,0 +1,34 @@
+<table class="content" style="width:517px;">
+	<tr>
+		<td colspan="4">Pendências</td>
+	</tr>
+
+	<% if not @unconfirmed_appointments.nil? and @unconfirmed_appointments.size > 0 %>
+		<tr><td>alooowww</td></tr>
+		<% @unconfirmed_appointments.each do |appointment| %>	
+		   <tr>
+				<td>
+					<%= appointment.doctor %>
+				</td>
+				<td>
+					<%= appointment.date %>
+				</td>
+				<td>
+					<%= appointment.client %>
+				</td>
+				<td>
+					<%= appointment.status %>
+				</td>
+			</tr>
+		<% end %>
+	<% else %>
+		<tr>
+			<td colspan="4">Nenhuma consulta está pendente</td>
+		</tr>
+	<% end %>
+
+</table>
+
+
+
+
