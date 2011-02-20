@@ -113,10 +113,10 @@ a:hover {
 
 /* Search */
 
-#search {
-	float: right;
-	width: 280px;
-	height: 60px;
+#new_appointment {
+/*	float: right;*/
+	width: 400px;
+/*	height: 60px;*/
 	padding: 20px 0px 0px 0px;
 	background: #F3F3EE;
 }

@@ -1,0 +1,34 @@
+<%= form_for(@appointment) do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<table>
+		<tr>
+			<td>Data da Consulta: </td><td><%= f.text_field :date%></td>
+		</tr>
+		<tr>
+			<td>Médco: </td><td><%= f.text_field :doctor%></td>
+		</tr>
+		<tr>
+			<td>Paciente: </td><td><%= f.text_field :client%></td>
+		</p>
+		<tr>
+			<td>Telefone Celular: </td><td><%= f.text_field :celular%><td>
+		</tr>
+		<tr>
+			<td>Status: </td><td><%= f.select :status, options_for_select([['A Confirmar', Appointment::TO_SEND], ['Enviado', Appointment::SENT], ['Confirmado', Appointment::CONFIRMED], ['Desmarcado', Appointment::CANCELED]])%></td>
+		</tr>
+	</table>
+	<center>
+	    <%= f.submit 'Adicionar Consulta'%>
+	</center>
+<% end %>

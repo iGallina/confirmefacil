@@ -1,5 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-
+<table>
+	<tr>
+		<td>Data da Consulta: </td>
+		<td><%= @appointment.date%></td>
+	</tr>
+	<tr>
+		<td>Médco: </td>
+		<td><%= @appointment.doctor%></td>
+	</tr>
+	<tr>
+		<td>Paciente: </td>
+		<td><%= @appointment.client%></td>
+	</p>
+	<tr>
+		<td>Telefone Celular: </td>
+		<td><%= @appointment.celular%><td>
+	</tr>
+	<tr>
+		<td>Status: </td>
+		<td>
+			<% if @appointment.status == Appointment::TO_SEND %>
+				A Confirmar
+			<% end %>
+		</td>
+	</tr>
+</table>
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>
