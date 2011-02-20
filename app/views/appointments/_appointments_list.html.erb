@@ -1,0 +1,13 @@
+<% unless @appointments.nil? %>
+	<% @appointments.each do |appointment| %>
+	 <tr>
+	    <td><%= appointment.client %></td>
+		<td><%= appointment.date %></td>
+		<td><%= appointment.status %></td>
+	 </tr>
+	<% end %>
+<% else %>
+	<tr>
+		<td><center>Não há consultas cadastradas.</center></td>
+	</tr>
+<% end %>
