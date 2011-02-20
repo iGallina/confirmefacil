@@ -158,6 +158,8 @@ a:hover {
 	height: 100px;
 	margin: 0 auto;
 	padding: 0;
+	display: block;
+	text-align: center;
 }
 
 #menu ul {
@@ -169,15 +171,8 @@ a:hover {
 
 #menu li {
 	float: left;
-}
-
-.x {
-	display: block;
 	margin-right: 1px;
 	padding: 10px 15px 14px 15px;
-	background: #D8DBCD;
-	text-decoration: none;
-	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	font-weight: bold;
@@ -185,26 +180,12 @@ a:hover {
 	border: none;
 }
 
-#menu a {
-	display: block;
-	margin-right: 1px;
-	padding: 10px 15px 14px 15px;
+.sidebar {
 	background: #D8DBCD;
-	text-decoration: none;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-	color: #FFFFFF;
-	border: none;
 }
 
-#menu a {
+.content {
 	background: #F34600;
-	text-decoration: none;
-}
-
-#menu .current_page_item a {
 }
 
 #content_wrapper {
