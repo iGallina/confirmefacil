@@ -114,16 +114,12 @@ a:hover {
 /* Search */
 
 #search {
-	float: right;
-	width: 280px;
 	height: 60px;
-	padding: 20px 0px 0px 0px;
 	background: #F3F3EE;
 }
 
 #search form {
 	height: 41px;
-	margin: 0;
 	padding: 10px 0 0 20px;
 }
 
@@ -206,6 +202,7 @@ a:hover {
 	float: right;
 	width: 517px;
 	padding: 0px;
+	color: #FFF;
 }
 
 /* Sidebar */
