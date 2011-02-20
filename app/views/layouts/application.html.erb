@@ -1,15 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-
-Name       : Holiday Season   
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20100529
-
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="keywords" content="" />
@@ -22,25 +11,40 @@ Released   : 20100529
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="wrapper">
-	<div id="header-wrapper">
-		<div id="header">
-			<div id="logo">
-				<h1><a href="#"><span>Confirme</span>Fácil  </a></h1>
-			</div>
-			<div id="menu">
-				<ul>
-					<li class="current_page_item"><a href="#">Consultas</a></li>
-					<li><a href="#">Confirmações</a></li>
-				</ul>
-			</div>
-		</div>
+
+<!--header-->
+<div id="header">
+	<div id="logo">
+		<h1><span>Confirme</span>Fácil</h1>
 	</div>
-	<%= yield %>
 </div>
+<!--end header-->
+
+<!--content-->
+<div id="page">
+	<div id="menu">
+		<ul>
+			<li><a href="#">Consultas</a></li>
+			<li><a href="#">Confirmações</a></li>
+		</ul>
+	</div>
+	<div id="content_wrapper">
+		<div id="sidebar">
+			<%= yield :appointments %>
+		</div>
+		<div id="content">
+			<%= yield :confirmations %>
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!--end content-->
+
+
+<!--footer-->
 <div id="footer">
 	<p>Copyright (c) 2011 UanaTec</p>
 </div>
-<!-- end #footer -->
+<!--end footer-->
 </body>
 </html>

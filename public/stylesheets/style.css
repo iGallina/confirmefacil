@@ -8,7 +8,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #FFFFFF url(images/img02.jpg) repeat left top;
+	background: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #A19D9A;
@@ -154,7 +154,6 @@ a:hover {
 /* Menu */
 
 #menu {
-	float: right;
 	width: 450px;
 	height: 100px;
 	margin: 0 auto;
@@ -172,6 +171,20 @@ a:hover {
 	float: left;
 }
 
+.x {
+	display: block;
+	margin-right: 1px;
+	padding: 10px 15px 14px 15px;
+	background: #D8DBCD;
+	text-decoration: none;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: none;
+}
+
 #menu a {
 	display: block;
 	margin-right: 1px;
@@ -186,12 +199,15 @@ a:hover {
 	border: none;
 }
 
-#menu a:hover, #menu .current_page_item a {
+#menu a {
 	background: #F34600;
 	text-decoration: none;
 }
 
 #menu .current_page_item a {
+}
+
+#content_wrapper {
 }
 
 /* Page */
