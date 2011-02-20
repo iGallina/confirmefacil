@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Confirmefacil::Application.config.secret_token = '238393bc6f8c565fc785a3a39f48c43a02bcb29f97e46e2d7be309166ca8cc7d82fff1bbb0558be6f6fb1c8bb7b2d6b7a264a9161223a4f5e3fc7648423e25d5'
+ConfirmeFacil::Application.config.secret_token = '4fc49e219f0bdb7519ebb657c2bc96c3a60095587664f2a22b057f10b892dd6c74ab1f6fe2e9ba86b03ab3fe2009136c1e2b74e7fb05e114d0c2015feb3684c2'

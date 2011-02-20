@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Confirmefacil::Application.config.session_store :cookie_store, :key => '_confirmefacil_session'
+ConfirmeFacil::Application.config.session_store :cookie_store, :key => '_confirme_facil_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Confirmefacil::Application.config.session_store :active_record_store
+# ConfirmeFacil::Application.config.session_store :active_record_store
