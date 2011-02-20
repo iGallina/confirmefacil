@@ -44,11 +44,12 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
-        format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
-        format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
+        # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
+        # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
+        format.js { render 'add_appointment.js.erb'}
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
+        # format.html { render :action => "new" }
+        # format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
       end
     end
   end

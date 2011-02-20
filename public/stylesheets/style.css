@@ -113,24 +113,13 @@ a:hover {
 
 /* Search */
 
-#search {
-	height: 60px;
-	background: #F3F3EE;
+#new_appointment {
+	padding: 10px 0px 0px 0px;
+	background: #D8DBCD;
 }
 
-#search form {
-	height: 41px;
-	padding: 10px 0 0 20px;
-}
 
-#search fieldset {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-#search-text {
-	width: 170px;
+#new_appointment input {
 	padding: 6px 5px 2px 5px;
 	border: 1px solid #DEDEDE;
 	background: #FFFFFF;
@@ -139,12 +128,8 @@ a:hover {
 	color: #5D781D;
 }
 
-#search-submit {
-	width: 50px;
-	height: 22px;
-	border: none;
-	background: #FA4100;
-	color: #FFFFFF;
+#new_appointment table td {
+	text-align: right;
 }
 
 /* Menu */
@@ -162,7 +147,7 @@ a:hover {
 	margin: 10px;
 	padding: 50px;
 	list-style: none;
-	line-height: normal;
+	line-height: 6px;
 }
 
 #menu li {
