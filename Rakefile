@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Confirmefacil::Application.load_tasks
+ConfirmeFacil::Application.load_tasks
