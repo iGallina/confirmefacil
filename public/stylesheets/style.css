@@ -37,6 +37,10 @@ a {
 	color: #FA4100;
 }
 
+table, input {
+	border-radius: 4px;
+}
+
 #wrapper {
 	margin: 0 auto;
 	padding: 0;
@@ -99,8 +103,16 @@ a {
 	margin: 0px 0px 0px 0px;
 }
 
+#new_appointment table tr td {
+	color: #FFF;
+}
+
 .submit{
-	border: none !important;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	border: 0px !important;
 	width: 100px !important;
 }
 
@@ -136,10 +148,12 @@ a {
 }
 
 .sidebar {
+	border-top-left-radius: 4px;
 	background: #D8DBCD;
 }
 
 .content {
+	border-top-right-radius: 4px;
 	background: #F34600;
 }
 
@@ -158,10 +172,12 @@ a {
 /* Content */
 
 #content {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
 	background: #F34600;
 	float: right;
 	width: 517px;
-	padding: 0px;
+	padding: 4px 0px 0px 0px;
 	color: #FFF;
 	min-height: 400px;
 	max-height: 600px;
@@ -170,10 +186,12 @@ a {
 /* Sidebar */
 
 #sidebar {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
 	background: #D8DBCD;	
 	float: left;
 	width: 483px;
-	padding: 0px;
+	padding: 4px 0px 0px 0px;
 	color: #787878;
 	min-height: 400px;
 	max-height: 600px;
@@ -212,12 +230,22 @@ a {
 	color: #767676;
 }
 
+
 #all_appointments {
 	margin-top: 10px;
 }
 
+#all_appointments th {
+	font-weight: normal;
+}
+
 #appoint_table {
+	color: #c0c0c0;
 	margin: 0 auto;
 	width: 96%;
 	background: #FFF;
+}
+
+appoint_table a {
+	color: #CCC;
 }
