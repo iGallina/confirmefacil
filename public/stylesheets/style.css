@@ -103,8 +103,8 @@ table, input {
 	margin: 0px 0px 0px 0px;
 }
 
-#new_appointment_table_2{
-	color: #CCC;
+#new_appointment table tr td {
+	color: #FFF;
 }
 
 .submit{
@@ -239,4 +239,8 @@ table, input {
 	margin: 0 auto;
 	width: 96%;
 	background: #FFF;
+}
+
+appoint_table a {
+	color: #CCC;
 }
