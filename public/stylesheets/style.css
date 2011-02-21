@@ -307,3 +307,14 @@ a:hover {
 #footer a {
 	color: #767676;
 }
+
+#all_appointments { 
+	width: 100%;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#appoint_table {
+	width: 100%;
+	border: 1px solid black;
+}
