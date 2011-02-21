@@ -4,6 +4,8 @@ class Appointment < ActiveRecord::Base
     CONFIRMED = "CONFIRMADO"
     CANCELED = "DESMARCADO"
     
+    # validates :date, :presence=>true
+    
     def self.get_unconfirmed_appointments
 		today = Date.today.midnight
 		tomorrow = Date.tomorrow.midnight
