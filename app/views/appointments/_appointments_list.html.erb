@@ -2,12 +2,16 @@
 	<% @appointments.each do |appointment| %>
 	 <tr>
 	    <td><%= appointment.client %></td>
-		<td><%= appointment.date %></td>
+		<td><%= appointment.date.strftime("%d/%m/%Y") %></td>
 		<td><%= appointment.status %></td>
+		<td>
+			<%= link_to '[remover]', {:action=>"destroy", :controller=>"appointments", :id=>appointment.id}, :remote=>true %>&nbsp;
+			<%= link_to '[editar]', {:action=>"edit", :controller=>"appointments", :id=>appointment.id}, :remote=>true %>
+		</td>
 	 </tr>
 	<% end %>
 <% else %>
 	<tr>
-		<td><center>Não há consultas cadastradas.</center></td>
+		<td colspan="3"><center>Não há consultas cadastradas.</center></td>
 	</tr>
 <% end %>

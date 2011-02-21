@@ -1,18 +1,23 @@
 <% content_for :appointments do %>
 <div id="new_appointment" >
+	Nova Consulta
+	
 	<%= render :partial=>"appointments/new_appointment_form" %>
+
+	<div id="all_appointments">
+		<table id="appoint_table">
+			<tr>
+				<th>Cliente</th>
+				<th>Data</th>
+				<th>Confirmação</th> 
+				<th>Opções</th>
+			</tr>
+			<%= render :partial=>"appointments/appointments_list" %>
+		</table>
+	</div>
 </div>
 <% end %>
 
 <% content_for :confirmations do %>
-	<p> Confirmações </p>
-<% end %>
-
-<% content_for :appointment_table do %>
-<table>
-	<th>Cliente</th>
-	<th>Data</th>
-	<th>Confirmação</th> 
-	<%= render :partial=>"appointments/appointments_list" %>
-</table>
+<p> Confirmações </p>
 <% end %>
