@@ -1,6 +1,6 @@
 <table class="content" style="width:517px;">
 	<tr>
-		<td colspan="4">Pendências de <%=Date.today.strftime('%d/%m/%Y')%></td>
+		<td colspan="4">Hoje <%=Date.today.strftime('%d/%m')%>,</td>
 	</tr>
 
 	<% if not @unconfirmed_appointments.nil? and @unconfirmed_appointments.size > 0 %>
@@ -22,7 +22,7 @@
 		<% end %>
 	<% else %>
 		<tr>
-			<td colspan="4">Nenhuma consulta está pendente</td>
+			<td colspan="4">nenhuma consulta está pendente.</td>
 		</tr>
 	<% end %>
 
