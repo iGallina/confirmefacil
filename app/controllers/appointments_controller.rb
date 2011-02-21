@@ -50,19 +50,20 @@ class AppointmentsController < ApplicationController
   def create
       @appointment = Appointment.new(params[:appointment])
 
+      puts "---------- #{@appointment.inspect}"
       respond_to do |format|
-          @appointment.save
-          # if @appointment.save
+          # @appointment.save
+          if @appointment.save
           #   # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
           #   # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
           #   
-          #   format.js { render 'add_appointment.js.erb'}
-          # else
+            format.js { render 'add_appointment.js.erb'}
+          else
           #   # format.html { render :action => "new" }
           #   # format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
-          # end
+              format.js { render 'new_appointment.js.erb'}
+          end
 
-          format.js { render 'add_appointment.js.erb'}
       end
   end
 

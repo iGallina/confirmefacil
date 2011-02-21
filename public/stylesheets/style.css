@@ -246,6 +246,10 @@ table, input {
 	background: #FFF;
 }
 
+#appoint_table{
+	color: black;
+}
+
 appoint_table a {
 	color: #CCC;
 }
