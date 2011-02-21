@@ -4,6 +4,9 @@ class Appointment < ActiveRecord::Base
     CONFIRMED = "CONFIRMADO"
     CANCELED = "DESMARCADO"
     
+    cattr_reader :per_page
+    @@per_page = 10
+    
     def self.get_unconfirmed_appointments
 		today = Date.today.midnight
 		tomorrow = Date.tomorrow.midnight
