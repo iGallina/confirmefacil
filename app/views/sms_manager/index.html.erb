@@ -7,3 +7,12 @@
 <% content_for :confirmations do %>
 	<p> Confirmações </p>
 <% end %>
+
+<% content_for :appointment_table do %>
+<table>
+	<th>Cliente</th>
+	<th>Data</th>
+	<th>Confirmação</th> 
+	<%= render :partial=>"appointments/appointments_list" %>
+</table>
+<% end %>
