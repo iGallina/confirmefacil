@@ -3,7 +3,7 @@
 	<td><%= @appointment.date.strftime("%d/%m/%Y") %></td>
 	<td><%= @appointment.status %></td>
 	<td>
-		<%= link_to '[remover]', {:action=>"destroy", :controller=>"appointments", :id=>@appointment.id}, :remote=>true %>&nbsp;
-		<%= link_to '[editar]', {:action=>"edit", :controller=>"appointments", :id=>@appointment.id}, :remote=>true %>
+		<%= link_to '[remover]', {:action=>"destroy", :controller=>"appointments", :id=>@appointment.id, :method=>:delete}, :remote=>true %>&nbsp;
+		<%#= link_to '[editar]', {:action=>"edit", :controller=>"appointments", :id=>@appointment.id}, :remote=>true %>
 	</td>
 </tr>

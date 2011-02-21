@@ -6,7 +6,8 @@ class Appointment < ActiveRecord::Base
     
     cattr_reader :per_page
     @@per_page = 10
-    # validates :date, :presence=>true
+
+    validates :date, :presence=>true
     
     def self.get_unconfirmed_appointments
 		today = Date.today.midnight
