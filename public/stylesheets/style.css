@@ -231,9 +231,9 @@ table, input {
 }
 
 
-#all_appointments {
+/*#all_appointments {
 	margin-top: 10px;
-}
+}*/
 
 #all_appointments th {
 	font-weight: normal;
