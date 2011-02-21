@@ -91,7 +91,10 @@ class AppointmentsController < ApplicationController
 
     @appointments = Appointment.all
     respond_to do |format|
-      format.js { render "refresh_appointment_list.js.erb" }
+
+      format.html { redirect_to(:root, :notice => 'Consulta excluido com sucesso.') }
+      format.xml  { head :ok }
+      #format.js { render "refresh_appointment_list.js.erb" }
     end
   end
 end

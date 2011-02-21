@@ -4,10 +4,10 @@
 	    <td><%= appointment.client %></td>
 		<td><%= appointment.date.strftime("%d/%m/%Y") %></td>
 		<td><%= appointment.status %></td>
-		<!-- <td>
+		<td>
 				<%= link_to '[remover]', appointment, :method=>'delete', :remote=>true%>&nbsp;
 				<%#= link_to '[editar]', {:action=>"edit", :controller=>"appointments", :id=>appointment.id}, :remote=>true %>
-			</td> -->
+			</td>
 	 </tr>
 	<% end %>
 <% else %>
