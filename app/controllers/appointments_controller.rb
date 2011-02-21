@@ -25,6 +25,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new.xml
   def new
     @appointment = Appointment.new
+    
+    # date_time = params[:date] + " " + params[:time]
+    # 
+    # @appointment = Time.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1/edit
   def edit
     @appointment = Appointment.find(params[:id])
+    
+    respond_to do |format|
+        format.js { render 'edit_appointment_form.js.erb'}
+    end
   end
 
   # POST /appointments

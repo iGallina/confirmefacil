@@ -20,11 +20,16 @@
 				</td>
 			</tr>
 		<% end %>
-	<% else %>
+	<% else  %>
 		<tr>
 			<td colspan="4">nenhuma consulta está pendente.</td>
 		</tr>
 	<% end %>
+	<tr>
+		<td colspan="4">
+			<%= will_paginate @unconfirmed_appointments %>
+		</td>
+	</tr>
 
 </table>
 

@@ -1,6 +1,9 @@
 <% content_for :appointments do %>
-<div id="new_appointment" >
-	<%= render :partial=>"appointments/new_appointment_form" %>
+
+<div id="new_appointment" >	
+	<div id="appointment_form">
+		<%= render :partial=>"appointments/new_appointment_form" %>
+	</div>
 
 	<div id="all_appointments">
 		<table id="appoint_table">
