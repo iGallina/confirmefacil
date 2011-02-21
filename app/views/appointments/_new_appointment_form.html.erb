@@ -1,30 +1,37 @@
 Nova Consulta
 
 <%= form_for(@appointment, :remote=>true) do |f| %>
-  <% if @appointment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</h2>
+<% if @appointment.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</h2>
 
-      <ul>
-      <% @appointment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% @appointment.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-	<table class="center">
-		<tr>
-			<td>Médico: </td><td><%= f.text_field :doctor%></td>			<td>Paciente: </td><td><%= f.text_field :client%></td>
-		</tr>
-		<tr>
-			<td>Data: </td><td><%= f.text_field :date %></td>			<td>Tel. Celular: </td><td><%= f.text_field :celular%><td>
-		</tr>
-		<tr>
-			<td>Status: </td><td style="text-align: left;"><%= f.select :status, options_for_select([['A Confirmar', Appointment::TO_SEND], ['Enviado', Appointment::SENT], ['Confirmado', Appointment::CONFIRMED], ['Desmarcado', Appointment::CANCELED]])%></td>
-		</tr>
-	</table>
-	<center>
-	    <%= f.submit 'adicionar +', :class=>"submit"%>
-	</center>
+<table class="center">
+	<tr>
+		<td>Médico: </td><td><%= f.text_field :doctor%></td>
+		<td>Paciente: </td><td><%= f.text_field :client%></td>
+	</tr>
+	<tr>
+		<td>Data: </td><td><%= text_field_tag :date %></td>
+		<!-- <td>Hora: </td><td><%#= text_field_tag :time %></td> -->
+		<td>Tel. Celular: </td>
+		<td><%= f.text_field :celular%></td>
+
+	</tr>
+</table>
+
+<br/>
+<%= hidden_field_tag :status,  Appointment::TO_SEND%>
+&nbsp;
+
+<center>
+	<%= f.submit 'adicionar +', :class=>"submit"%>
+</center>
 <% end %>

@@ -25,6 +25,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new.xml
   def new
     @appointment = Appointment.new
+    
+    # date_time = params[:date] + " " + params[:time]
+    # 
+    # @appointment = Time.new
 
     respond_to do |format|
       format.html # new.html.erb
