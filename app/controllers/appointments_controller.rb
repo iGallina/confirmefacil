@@ -48,18 +48,22 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.xml
   def create
-    @appointment = Appointment.new(params[:appointment])
+      @appointment = Appointment.new(params[:appointment])
 
-    respond_to do |format|
-      if @appointment.save
-        # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
-        # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
-        format.js { render 'add_appointment.js.erb'}
-      else
-        # format.html { render :action => "new" }
-        # format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
+      respond_to do |format|
+          @appointment.save
+          # if @appointment.save
+          #   # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
+          #   # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
+          #   
+          #   format.js { render 'add_appointment.js.erb'}
+          # else
+          #   # format.html { render :action => "new" }
+          #   # format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
+          # end
+
+          format.js { render 'add_appointment.js.erb'}
       end
-    end
   end
 
   # PUT /appointments/1
@@ -81,12 +85,13 @@ class AppointmentsController < ApplicationController
   # DELETE /appointments/1
   # DELETE /appointments/1.xml
   def destroy
+    puts "--------------- Teste"
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
 
+    @appointments = Appointment.all
     respond_to do |format|
-      format.html { redirect_to(appointments_url) }
-      format.xml  { head :ok }
+      format.js { render "refresh_appointment_list.js.erb" }
     end
   end
 end
