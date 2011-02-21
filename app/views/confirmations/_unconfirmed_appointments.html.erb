@@ -1,6 +1,6 @@
 <table class="content" style="width:517px;">
 	<tr>
-		<td colspan="4">Pendências</td>
+		<td colspan="4">Pendências de <%=Date.today.strftime('%d/%m/%Y')%></td>
 	</tr>
 
 	<% if not @unconfirmed_appointments.nil? and @unconfirmed_appointments.size > 0 %>
@@ -10,7 +10,7 @@
 					<%= appointment.doctor %>
 				</td>
 				<td>
-					<%= appointment.date %>
+					<%= appointment.date.strftime('%H:%M') %>
 				</td>
 				<td>
 					<%= appointment.client %>
