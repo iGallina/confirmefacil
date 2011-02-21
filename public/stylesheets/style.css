@@ -90,11 +90,18 @@ a {
 
 #new_appointment input {
 	padding: 6px 5px 2px 5px;
-	border: 1px solid #DEDEDE;
+	border: 1px solid #CECECE;
 	background: #FFFFFF;
 	text-transform: lowercase;
 	font: normal 11px Arial, Helvetica, sans-serif;
 	color: #5D781D;
+	width: 160px;
+	margin: 0px 0px 0px 0px;
+}
+
+.submit{
+	border: none !important;
+	width: 100px !important;
 }
 
 #new_appointment table td {
@@ -205,13 +212,11 @@ a {
 	color: #767676;
 }
 
-#all_appointments { 
-	width: 100%;
-	margin-top: 10px;
-	margin-left: 10px;
+#all_appointments {
 }
 
 #appoint_table {
-	width: 100%;
-	border: 1px solid black;
+	margin: 0 auto;
+	width: 96%;
+	background: #FFF;
 }

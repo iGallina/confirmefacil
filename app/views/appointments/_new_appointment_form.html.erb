@@ -15,22 +15,16 @@ Nova Consulta
 
 	<table class="center">
 		<tr>
-			<td>Data: </td><td><%= f.text_field :date %></td>
+			<td>Médico: </td><td><%= f.text_field :doctor%></td>			<td>Paciente: </td><td><%= f.text_field :client%></td>
 		</tr>
 		<tr>
-			<td>Médico: </td><td><%= f.text_field :doctor%></td>
-		</tr>
-		<tr>
-			<td>Paciente: </td><td><%= f.text_field :client%></td>
-		</p>
-		<tr>
-			<td>Tel. Celular: </td><td><%= f.text_field :celular%><td>
+			<td>Data: </td><td><%= f.text_field :date %></td>			<td>Tel. Celular: </td><td><%= f.text_field :celular%><td>
 		</tr>
 		<tr>
 			<td>Status: </td><td style="text-align: left;"><%= f.select :status, options_for_select([['A Confirmar', Appointment::TO_SEND], ['Enviado', Appointment::SENT], ['Confirmado', Appointment::CONFIRMED], ['Desmarcado', Appointment::CANCELED]])%></td>
 		</tr>
 	</table>
 	<center>
-	    <%= f.submit 'Adicionar'%>
+	    <%= f.submit 'adicionar +', :class=>"submit"%>
 	</center>
 <% end %>
