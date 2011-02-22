@@ -230,6 +230,11 @@ table, input {
 	color: #767676;
 }
 
+
+/*#all_appointments {
+	margin-top: 10px;
+}*/
+
 #all_appointments th {
 	font-weight: normal;
 }

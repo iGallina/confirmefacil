@@ -1,7 +1,7 @@
 <%= form_for(@appointment, :remote=>true) do |f| %>
 <% if @appointment.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</h2>
+	<span class="error-span"><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</span>
 
 	<ul>
 		<% @appointment.errors.full_messages.each do |msg| %>
@@ -17,7 +17,7 @@
 		<td>Paciente: </td><td><%= f.text_field :client%></td>
 	</tr>
 	<tr>
-		<td>Data: </td><td><%= text_field_tag :date %></td>
+		<td>Data: </td><td><%= f.text_field :date %></td>
 		<!-- <td>Hora: </td><td><%#= text_field_tag :time %></td> -->
 		<td>Tel. Celular: </td>
 		<td><%= f.text_field :celular%></td>
