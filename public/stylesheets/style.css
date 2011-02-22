@@ -8,7 +8,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #FFFFFF;
+	background: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 }
@@ -84,42 +84,6 @@ table, input {
 	color: #333333;
 }
 
-/* Search */
-
-#new_appointment {
-	padding: 10px 0px 0px 0px;
-	background: #D8DBCD;
-}
-
-
-#new_appointment input {
-	padding: 6px 5px 2px 5px;
-	border: 1px solid #CECECE;
-	background: #FFFFFF;
-	text-transform: lowercase;
-	font: normal 11px Arial, Helvetica, sans-serif;
-	color: #5D781D;
-	width: 160px;
-	margin: 0px 0px 0px 0px;
-}
-
-#new_appointment table tr td {
-	color: #FFF;
-}
-
-.submit{
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 0px !important;
-	border-bottom-right-radius: 0px !important;
-	border: 0px !important;
-	width: 100px !important;
-}
-
-#new_appointment table td {
-	text-align: right;
-}
-
 /* Menu */
 
 .center{
@@ -143,7 +107,7 @@ table, input {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	font-weight: bold;
-	color: #FFFFFF;
+	color: #999;
 	border: none;
 }
 
@@ -183,6 +147,54 @@ table, input {
 	max-height: 600px;
 }
 
+/* Appointment Table */
+
+#new_appointment {
+	padding: 10px 0px 0px 0px;
+	background: #D8DBCD;
+}
+
+
+#new_appointment input {
+	padding: 6px 5px 2px 5px;
+	border: 1px solid #CECECE;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #5D781D;
+	width: 160px;
+	margin: 0px 0px 0px 0px;
+}
+
+#new_appointment {
+	text-align: center;
+}
+
+.submit{
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	border: 0px !important;
+	width: 100px !important;
+}
+
+#all_appointments {
+	font-weight: normal;
+}
+
+#appoint_table {
+	color: #999;
+	margin: 0 auto;
+	width: 96%;
+	background: #FFF;
+}
+
+#appoint_table a, a:hover, a:visited, a:active, a:link {
+	text-decoration: none;
+	color: #999;
+}
+
 /* Sidebar */
 
 #sidebar {
@@ -192,7 +204,7 @@ table, input {
 	float: left;
 	width: 483px;
 	padding: 4px 0px 0px 0px;
-	color: #787878;
+	color: #999;
 	min-height: 400px;
 	max-height: 600px;
 }
@@ -227,25 +239,6 @@ table, input {
 }
 
 #footer a {
-	color: #767676;
-}
-
-
-/*#all_appointments {
-	margin-top: 10px;
-}*/
-
-#all_appointments th {
-	font-weight: normal;
-}
-
-#appoint_table {
-	color: #c0c0c0;
-	margin: 0 auto;
-	width: 96%;
-	background: #FFF;
-}
-
-#appoint_table a {
-	color: #CCC;
+	text-decoration: none;
+	color: #999;
 }
