@@ -1,7 +1,16 @@
 <%= form_for(@appointment, :remote=>true) do |f| %>
+<%= javascript_include_tag "jquery-ui-1.8.9.custom.min" %>
+<script type="text/javascript">
+	$(function() {
+		$("#calendario").datepicker({dateFormat: 'dd/mm/yy'});
+		$('#calendario').datepicker('setDate', new Date('<%= Time.now() %>'))
+	});
+
+</script>
+
 <% if @appointment.errors.any? %>
 <div id="error_explanation">
-	<span class="error-span"><%= pluralize(@appointment.errors.count, "error") %> impediram que essa consulta fosse salva:</span>
+	<span class="error-span"><%= pluralize(@appointment.errors.count, "error") %> impediu que essa consulta fosse salva:</span>
 
 	<ul>
 		<% @appointment.errors.full_messages.each do |msg| %>
@@ -13,13 +22,44 @@
 
 <table class="center">
 	<tr>
-		<td>Médico: </td><td><%= f.text_field :doctor%></td>
-		<td>Paciente: </td><td><%= f.text_field :client%></td>
+		<td>Médico:</td><td colspan="3"><%= f.text_field :doctor%></td>
+		<td>Paciente:</td><td><%= f.text_field :client%></td>
 	</tr>
 	<tr>
-		<td>Data: </td><td><%= f.text_field :date %></td>
-		<!-- <td>Hora: </td><td><%#= text_field_tag :time %></td> -->
-		<td>Tel. Celular: </td><td><%= f.text_field :celular%></td>
+		<td>Data:</td><td><%= text_field_tag "calendario", {}, :class=>"input_date" %></td>
+			<td> às </td>
+			<td>
+				<%= select_tag 'hour', 
+				            options_for_select([['7:00', '7'],
+												['7:30', '7.5'],
+												['8:00', '8'],
+												['8:30', '8.5'],
+												['9:00', '9.5'],
+												['10:00', '10'],
+												['10:30', '10.5'],
+												['11:00', '11'],
+												['11:30', '11.5'],
+												['12:00', '12'],
+												['12:30', '12.5'],
+												['13:00', '13'],
+												['13:30', '13.5'],
+												['14:00', '14'],
+												['14:30', '14.5'],
+												['15:00', '15'],
+												['15:30', '15.5'],
+												['16:00', '16'],
+												['16:30', '16.5'],
+												['17:00', '17'],
+												['17:30', '17.5'],
+												['18:00', '18'],
+												['18:30', '18.5'],
+												['19:00', '19'],
+												['19:30', '19.5'],
+												['20:00', '20'],
+												['20:30', '20.5'],
+												['21:00', '21']]) %>
+			</td>
+		<td>Celular:</td><td><%= f.text_field :celular%></td>
 
 	</tr>
 </table>
@@ -28,7 +68,7 @@
 <%= hidden_field_tag :status,  Appointment::TO_SEND%>
 &nbsp;
 
-<center>
-	<%= f.submit 'adicionar +', :class=>"submit"%>
-</center>
+<div id="center">
+	<%= image_submit_tag("add.png", :class => 'submit') %>
+</div>
 <% end %>

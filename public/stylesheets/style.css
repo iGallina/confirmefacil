@@ -34,7 +34,7 @@ h3 {
 
 a {
 	text-decoration: none;
-	color: #FA4100;
+	color: #FFF;
 }
 
 table, input {
@@ -176,7 +176,16 @@ table, input {
 	border-bottom-left-radius: 0px !important;
 	border-bottom-right-radius: 0px !important;
 	border: 0px !important;
-	width: 100px !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+#center {
+	margin: 0px 0px -3px 0px;
+}
+
+.input_date{
+	width: 55px !important;
 }
 
 #all_appointments {
@@ -190,7 +199,7 @@ table, input {
 	background: #FFF;
 }
 
-#appoint_table a, a:hover, a:visited, a:active, a:link {
+#appoint_table a:hover, #appoint_table a:visited, #appoint_table a:active, #appoint_table a:link {
 	text-decoration: none;
 	color: #999;
 }
@@ -207,11 +216,6 @@ table, input {
 	color: #999;
 	min-height: 400px;
 	max-height: 600px;
-}
-
-#sidebar a:hover, a:visited, a:active, a:link {
-	text-decoration: none;
-	color: #FFF;
 }
 
 /* Calendar */
