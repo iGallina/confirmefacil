@@ -12,19 +12,8 @@
 	<div id="appointment_form">
 		<%= render :partial=>"appointments/new_appointment_form" %>
 	</div>
-
 	<div id="all_appointments">
-		<table id="appoint_table">
-			<tr>
-				<th>Cliente</th>
-				<th>Data</th>
-				<th>Confirmação</th> 
-				<th>Opções</th>
-			</tr>
-			<div id="testeteste"> 
-			<%= render :partial=>"appointments/appointments_list" %>
-			</div>
-		</table>
+	    <%= render :partial=>"appointments/appointments_pack" %>
 	</div>
 </div>
 <% end %>
