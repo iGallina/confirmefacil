@@ -2,8 +2,8 @@
 <%= javascript_include_tag "jquery-ui-1.8.9.custom.min" %>
 <script type="text/javascript">
 	$(function() {
-		$("#calendario").datepicker({dateFormat: 'dd/mm/yy'});
-		$('#calendario').datepicker('setDate', new Date('<%= Time.now() %>'))
+		$("#date").datepicker({dateFormat: 'dd/mm/yy'});
+		$('#date').datepicker('setDate', new Date('<%= Time.now() %>'))
 	});
 
 </script>
@@ -26,7 +26,7 @@
 		<td>Paciente:</td><td><%= f.text_field :client%></td>
 	</tr>
 	<tr>
-		<td>Data:</td><td><%= text_field_tag "calendario", {}, :class=>"input_date" %></td>
+		<td>Data:</td><td><%= text_field_tag "date", {}, :class=>"input_date" %></td>
 			<td> às </td>
 			<td>
 				<%= select_tag 'hour', 

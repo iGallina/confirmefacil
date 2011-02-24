@@ -1,3 +1,6 @@
+#TODO's
+#    implementar o edit
+
 class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.xml
@@ -38,11 +41,11 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1/edit
   def edit
-    @appointment = Appointment.find(params[:id])
-    
-    respond_to do |format|
-        format.js { render 'edit_appointment_form.js.erb'}
-    end
+#    @appointment = Appointment.find(params[:id])
+#    
+#    respond_to do |format|
+#        format.js { render 'edit_appointment_form.js.erb'}
+#    end
   end
 
   # POST /appointments
@@ -50,9 +53,15 @@ class AppointmentsController < ApplicationController
   def create
       @appointment = Appointment.new(params[:appointment])
 
-      puts "---------- #{@appointment.inspect}"
       respond_to do |format|
           # @appointment.save
+          @appointment.status = Appointment::TO_SEND
+          
+          date = params[:date]
+          date = date.split('/')
+          date = "#{date[2]}/#{date[1]}/#{date[0]}".to_date
+          @appointment.date = date
+          
           if @appointment.save
           #   # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
           #   # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
