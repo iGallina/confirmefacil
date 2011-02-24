@@ -95,16 +95,18 @@ class AppointmentsController < ApplicationController
   # DELETE /appointments/1
   # DELETE /appointments/1.xml
   def destroy
-    puts "--------------- Teste"
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
 
-    @appointments = Appointment.all
-    respond_to do |format|
+    today = Date.today.midnight
+	tomorrow = Date.tomorrow.midnight
+    @appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date'
+    
+#    respond_to do |format|
 
-      format.html { redirect_to(:root, :notice => 'Consulta excluido com sucesso.') }
-      format.xml  { head :ok }
-      #format.js { render "refresh_appointment_list.js.erb" }
-    end
+#      format.html { redirect_to(:root, :notice => 'Consulta excluido com sucesso.') }
+#      format.xml  { head :ok }
+#       format.js { render 'destroy.js.erb'}
+#    end
   end
 end
