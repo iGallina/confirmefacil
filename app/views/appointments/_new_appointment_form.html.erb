@@ -4,8 +4,11 @@
 	$(function() {
 		$("#date").datepicker({dateFormat: 'dd/mm/yy'});
 		$('#date').datepicker('setDate', new Date('<%= Time.now() %>'))
+		$("#center").click(function(){
+			$("#appointment_form").hide();
+			$("#add_button").show();
+		});
 	});
-
 </script>
 
 <% if @appointment.errors.any? %>
@@ -69,6 +72,6 @@
 &nbsp;
 
 <div id="center">
-	<%= image_submit_tag("add.png", :class => 'submit') %>
+	<input type="submit" value="adicionar" class="ok"/>
 </div>
 <% end %>

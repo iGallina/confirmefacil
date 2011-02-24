@@ -1,6 +1,14 @@
 <% content_for :appointments do %>
-
-<div id="new_appointment" >	
+<script type="text/javascript">
+	$(function() {
+		$("#add_button").click(function(){
+			$("#appointment_form").show();
+			$("#add_button").hide();
+		});
+	});
+</script>
+<div id="new_appointment" >
+	<a href='#' id="add_button"><%= image_submit_tag("add.png", :class => 'submit') %></a>
 	<div id="appointment_form">
 		<%= render :partial=>"appointments/new_appointment_form" %>
 	</div>
