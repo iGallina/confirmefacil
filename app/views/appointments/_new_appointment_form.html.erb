@@ -67,7 +67,9 @@
 <br/>
 <%= hidden_field_tag :status,  Appointment::TO_SEND%>
 &nbsp;
-
+<div id="post_errors" style="display:none"></div>
+<div id="flash_notice" style="display:none"></div>
+<br>
 <div id="center">
 	<%= image_submit_tag("add.png", :class => 'submit') %>
 </div>

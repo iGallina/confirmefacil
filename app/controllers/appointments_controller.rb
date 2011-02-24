@@ -2,6 +2,8 @@
 #    implementar o edit
 
 class AppointmentsController < ApplicationController
+  respond_to :html, :xml, :js 
+
   # GET /appointments
   # GET /appointments.xml
   def index
@@ -97,16 +99,15 @@ class AppointmentsController < ApplicationController
   def destroy
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
+    flash[:notice] = "Consulta desmarcada com sucesso."
 
     today = Date.today.midnight
-	tomorrow = Date.tomorrow.midnight
+    tomorrow = Date.tomorrow.midnight
     @appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date'
-    
-#    respond_to do |format|
 
-#      format.html { redirect_to(:root, :notice => 'Consulta excluido com sucesso.') }
-#      format.xml  { head :ok }
-#       format.js { render 'destroy.js.erb'}
-#    end
+    respond_to do |format|
+        format.js { render 'destroy.js.erb'}
+    end
+
   end
 end
