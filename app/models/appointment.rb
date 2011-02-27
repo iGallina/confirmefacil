@@ -15,7 +15,7 @@ class Appointment < ActiveRecord::Base
     def self.get_unconfirmed_appointments
 		today = Date.today.midnight
 		tomorrow = Date.tomorrow.midnight
-		unconfirmed_appointments = Appointment.find(:all, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow])
+		unconfirmed_appointments = Appointment.find(:all, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>"DESC date")
 
 		return unconfirmed_appointments
 	end

@@ -103,7 +103,7 @@ class AppointmentsController < ApplicationController
 
     today = Date.today.midnight
     tomorrow = Date.tomorrow.midnight
-    @appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date'
+    @appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date DESC'
 
     respond_to do |format|
         format.js { render 'destroy.js.erb'}
