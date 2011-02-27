@@ -19,5 +19,5 @@ class Appointment < ActiveRecord::Base
 
 		return unconfirmed_appointments
 	end
-    
+
 end

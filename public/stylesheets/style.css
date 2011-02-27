@@ -154,10 +154,6 @@ table, input {
 	background: #D8DBCD;
 }
 
-#appointment_form {
-	display: none;
-}
-
 #new_appointment input {
 	padding: 6px 5px 2px 5px;
 	border: 1px solid #CECECE;

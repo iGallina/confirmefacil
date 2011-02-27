@@ -68,7 +68,14 @@ class AppointmentsController < ApplicationController
           #   # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
           #   # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
           #   
-            format.js { render 'add_appointment.js.erb'}
+#			@appointment.send_sms
+
+			@appointment.status = Appointment::SENT
+			@appointment.save
+
+			@appointments = Appointment.paginate :page => params[:page], :per_page => 10, :order=>'date DESC'
+
+			format.js { render 'add_appointment.js.erb'}
           else
           #   # format.html { render :action => "new" }
           #   # format.xml  { render :xml => @appointment.errors, :status => :unprocessable_entity }
@@ -101,10 +108,8 @@ class AppointmentsController < ApplicationController
     @appointment.destroy
     flash[:notice] = "Consulta desmarcada com sucesso."
 
-    today = Date.today.midnight
-    tomorrow = Date.tomorrow.midnight
-    @appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date DESC'
-
+	@appointments = Appointment.paginate :page => params[:page], :per_page => 10, :order=>'date DESC'
+	
     respond_to do |format|
         format.js { render 'destroy.js.erb'}
     end
