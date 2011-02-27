@@ -26,13 +26,20 @@
 		<ul>
 			<li class="sidebar">Consultas</li>
 			<li class="content">
-				<%= link_to "Confirmações","get_unconfirmed_appointments", :remote=>true %>
+				<a>Confirmações</a>
 			</li>
 		</ul>
 	</div>
 	<div id="content_wrapper">
 		<div id="sidebar">
-			<%= yield :appointments %>
+			<div id="new_appointment" >
+				<div id="appointment_form">
+					<%= render :partial=>"appointments/new_appointment_form" %>
+				</div>
+				<div id="all_appointments">
+					<%= render :partial=>"appointments/appointments_pack" %>
+				</div>
+			</div>
 		</div>
 		<div id="content">
 			<%= render :partial=>"confirmations/unconfirmed_appointments" %>

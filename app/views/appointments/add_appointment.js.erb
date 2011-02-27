@@ -1,2 +1,4 @@
 $("#all_appointments").html("<%= escape_javascript(render(:partial=>'appointments_pack')) %>")
+<% unconfirmed_appointments = Appointment.get_unconfirmed_appointments %>
+$("#content").html("<%= escape_javascript(render(:partial=>'confirmations/unconfirmed_appointments')) %>")
 

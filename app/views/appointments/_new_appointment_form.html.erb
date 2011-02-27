@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	$(function() {
 		$("#date").datepicker({dateFormat: 'dd/mm/yy'});
-		$('#date').datepicker('setDate', new Date('<%= Time.now() %>'))
+		$('#date').datepicker('setDate', new Date('<%= Time.now() %>'));
 	});
 </script>
 
@@ -70,6 +70,6 @@
 <div id="flash_notice" style="display:none"></div>
 <br>
 <div id="center">
-	<input type="submit" value="adicionar" class="ok"/>
+	<input id="add" type="submit" value="adicionar" class="ok"/>
 </div>
 <% end %>

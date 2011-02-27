@@ -73,7 +73,7 @@ class AppointmentsController < ApplicationController
 			@appointment.status = Appointment::SENT
 			@appointment.save
 
-			@appointments = Appointment.paginate :page => params[:page], :per_page => 10, :order=>'date DESC'
+			@appointments = Appointment.paginate :page => params[:appointments_page], :per_page => 10, :order=>'date DESC'
 
 			format.js { render 'add_appointment.js.erb'}
           else
@@ -108,7 +108,7 @@ class AppointmentsController < ApplicationController
     @appointment.destroy
     flash[:notice] = "Consulta desmarcada com sucesso."
 
-	@appointments = Appointment.paginate :page => params[:page], :per_page => 10, :order=>'date DESC'
+	@appointments = Appointment.paginate :page => params[:appointments_page], :per_page => 10, :order=>'date DESC'
 	
     respond_to do |format|
         format.js { render 'destroy.js.erb'}

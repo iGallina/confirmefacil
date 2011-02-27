@@ -23,7 +23,7 @@
 <% end %>
 <tr>
 	<td colspan="4">
-		<%= will_paginate @appointments, :prev_label=>"anterior",  :next_label=>"próximo"  %>
+		<%= will_paginate @appointments, :prev_label=>"anterior",  :next_label=>"próximo", :params=>{:page1=>1}  %>
 	</td>
 </tr>
 </table>

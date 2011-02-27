@@ -5,7 +5,8 @@ class ConfirmationsController < ApplicationController
 
 		today = Date.today.midnight
 		tomorrow = Date.tomorrow.midnight
-		@unconfirmed_appointments = Appointment.paginate :page => params[:page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date DESC'
+		
+		@unconfirmed_appointments = Appointment.paginate :page => params[:conf_page], :per_page => 18, :conditions=>["(status=? or status=?) and date>=? and date<? ", Appointment::SENT, Appointment::CANCELED, today, tomorrow], :order=>'date DESC'
 
 		respond_to do |format|
             format.js #{render  "get_unconfirmed_appointments.js.erb"}
