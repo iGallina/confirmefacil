@@ -4,7 +4,12 @@
 	$(function() {
 		$("#date").datepicker({dateFormat: 'dd/mm/yy'});
 		$('#date').datepicker('setDate', new Date('<%= Time.now() %>'));
+		$('#appointment_doctor').val("");
+		$('#appointment_client').val("");
+		$('#appointment_date').val("");
+		$('#appointment_celular').val("");
 	});
+	
 </script>
 
 <% if @appointment.errors.any? %>
