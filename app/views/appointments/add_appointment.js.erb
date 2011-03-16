@@ -1,4 +1,6 @@
 $("#all_appointments").html("<%= escape_javascript(render(:partial=>'appointments_pack')) %>")
-$("#appointment_form").html("<%= escape_javascript(render(:partial=>'new_appointment_form')) %>")
 $("#content").html("<%= escape_javascript(render(:partial=>'confirmations/unconfirmed_appointments')) %>")
-
+$('#appointment_doctor').val("");
+$('#appointment_client').val("");
+$('#appointment_date').val("");
+$('#appointment_celular').val("");
