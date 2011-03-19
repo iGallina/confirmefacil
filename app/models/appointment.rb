@@ -54,6 +54,7 @@ class Appointment < ActiveRecord::Base
         begin
             msg = create_msg_content
             mobile = sanitize_mobile_string
+            
             response = RestClient.post 'http://system.human.com.br/GatewayIntegration/msgSms.do',
                                 :content_type   => 'multipart/form-data',
                                 :dispatch       => 'send',
