@@ -7,6 +7,7 @@ gem 'autotest'
 gem 'jquery-rails'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'prawn', :git => "git://github.com/sandal/prawn", :tag => '0.10.2', :submodules => true
+gem 'rest-client'
 
 
 group :development, :test do

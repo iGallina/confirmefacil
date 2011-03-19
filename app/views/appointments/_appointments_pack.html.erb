@@ -2,15 +2,15 @@
 <% unless @appointments.nil? %>
 	<tr>
 		<th>Cliente</th>
-		<th>Data</th>
-		<th>Confirmação</th> 
+		<th>Data e hora</th>
+		<th>Celular</th>
 		<th>Opções</th>
 	</tr>
 	<% @appointments.each do |appointment| %>
 	 <tr>
 	    <td><%= appointment.client %></td>
-	    <td><%= appointment.date.strftime("%d/%m/%Y") %></td>
-	    <td><%= appointment.status %></td>
+	    <td><%= appointment.date.strftime("%d/%m/%Y - %H:%M") %></td>
+	    <td><%= appointment.celular %></td>
 	    <td>
 		<%= link_to '[remover]', appointment, :method=>'delete', :remote=>true%>&nbsp;
 	    </td>
