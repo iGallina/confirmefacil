@@ -55,20 +55,24 @@ class AppointmentsController < ApplicationController
   def create
       @appointment = Appointment.new(params[:appointment])
 
+
       respond_to do |format|
           # @appointment.save
           @appointment.status = Appointment::TO_SEND
           
           date = params[:date]
           date = date.split('/')
-          date = "#{date[2]}/#{date[1]}/#{date[0]}".to_date
-          @appointment.date = date
+          
+          hour = params[:hour]
+          hour = hour.split(':')
+          
+          @appointment.date = DateTime.new(date[2].to_i, date[1].to_i, date[0].to_i, hour[0].to_i, hour[1].to_i, 0)
           
           if @appointment.save
           #   # format.html { redirect_to(@appointment, :notice => 'Appointment was successfully created.') }
           #   # format.xml  { render :xml => @appointment, :status => :created, :location => @appointment }
           #   
-#			@appointment.send_sms
+			@appointment.send_sms
 
 			@appointment.status = Appointment::SENT
 			@appointment.save
