@@ -60,8 +60,7 @@ class Appointment < ActiveRecord::Base
                                 :account        => 'muxtec',
                                 :code           => 'nqngbTypBK',
                                 :msg            => msg,
-                                :from           => 'uana',
-                                :to             => '556181185049',
+                                :to             => mobile,
                                 :id             => self.id.to_s,
                                 :schedule       => (Time.now + 1.minute).strftime("%d/%m/%Y %H:%M:%S"),
                                 :callbackOption => '2'
