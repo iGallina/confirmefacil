@@ -75,6 +75,8 @@
 <div id="flash_notice" style="display:none"></div>
 <br>
 <div id="center">
-	<input id="add" type="submit" value="adicionar" class="ok"/>
+    
+	<input id="add" type="submit" value="adicionar" class="ok" onclick="hide_add_button();"/>
+	<%= image_tag 'carregando.gif', :id=>"carregando", :style=>"display:none;"%>
 </div>
 <% end %>
