@@ -75,4 +75,40 @@ class Appointment < ActiveRecord::Base
         return true
     end
 
+	def self.refresh_todays_sms_status
+        begin
+            appointments = Appointment.find(:all, :conditions =>["created_at >= ?", 1.day.ago])
+            appointments_id =[]
+            appointments.each do |a|
+               appointments_id << "#{a.id};"
+            end
+            
+            puts "#{appointments_id}"
+            
+            response = RestClient.post 'http://system.human.com.br/GatewayIntegration/msgSms.do',
+                                :content_type   => 'multipart/form-data',
+                                :dispatch       => 'checkMultiple',
+                                :account        => 'muxtec',
+                                :code           => 'nqngbTypBK',
+                                :idList         => "#{appointments_id}"
+                                
+            puts "Chequei o status: #{response.inspect}"
+            
+            count = 0
+            appointments.each do |a|
+               response = response.split("\n")
+               status = response[count]
+               count = count + 1
+               if (status.eql?("120 - Message received by mobile"))
+                   a.status = "ENVIADO"
+               end
+               a.save
+            end
+        rescue Exception => e
+            puts("[#{Time.now}] - [#{@e}]")
+            raise "Erro - #{e.inspect}"
+        end
+        return true
+    end
+
 end
